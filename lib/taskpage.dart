@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workplace/chatpage.dart';
 
 import 'package:workplace/dates.dart';
 import 'package:workplace/homepage.dart';
@@ -137,8 +138,16 @@ class Taskpage extends StatelessWidget {
             icon: Icon(Icons.calendar_month),
             label: 'Calendar',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.deepPurple,
+            icon: IconButton(
+                icon: const Icon(
+                  Icons.chat,
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Chatpage()));
+                }),
             label: 'Chat',
           ),
           const BottomNavigationBarItem(
